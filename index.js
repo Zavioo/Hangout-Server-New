@@ -25,9 +25,3 @@ hOutServer.get("/", (req, res) => {
     res.status(200).send(`<h1 style="color:cyan;">hOutServer Stareted at port ${PORT} and waiting for client request !!!</h1>`)
 })
 
-io.on('connection', (socket) => {
-    console.log('a user connected');
-    socket.on('disconnect', () => {
-      console.log('user disconnected');
-    });
-  });
