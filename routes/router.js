@@ -4,7 +4,7 @@ const userController = require("../controllers/userController")
 const jwtMiddleware = require('../middlerwears/jwtMiddleware')
 const multerMiddleware = require('../middlerwears/multerMiddleware')
 const PostController = require('../controllers/postController')
-const chatController  = require('../controllers/chatController')
+const chatController = require('../controllers/chatController')
 const massageController = require('../controllers/massageController')
 
 
@@ -58,7 +58,10 @@ router.put('/user/:id/savepost', PostController.updateSavedPostsController)
 // to start chat http://localhost:3000/user/id/openchat
 router.post('/user/:id/openchat', chatController.openChatController)
 
-// // to start chat http://localhost:3000/user/id/openchat
-// router.post('/user/createmassage',massageController.createMassageController )
+// to createmassage http://localhost:3000/user/createmassage
+router.post('/user/createmassage', massageController.createMassageController)
+
+// to fetchAllMassage http://localhost:3000/user/id/fetchallmassages
+router.get('/user/:id/fetchallmassages', massageController.fetchAllMeassagesController)
 
 module.exports = router 
