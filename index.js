@@ -20,7 +20,6 @@ const PORT = 3000 || process.env.PORT
 const io = new Server(server, {
   cors: {
     pingTimeout: 60000,
-    origin: "https://hangout-frontend-mu.vercel.app"
   },
 });
 
